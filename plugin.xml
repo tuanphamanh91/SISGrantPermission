@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-ios-grant-permission" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+        <name>cordova-plugin-ios-grant-permission</name>
+
+        <engines>
+                <engine name="cordova" version=">=4.0.0"/>
+        </engines>
+        <js-module name="permission" src="www/permission.js">
+                <clobbers target="cordova.plugins.permission" />
+        </js-module>
+        
+ <!-- iOS -->
+        <platform name="ios">
+                <config-file target="config.xml" parent="/*" >
+                        <feature name="meomeopermission">
+                          <param name="ios-package" value="GrantPermission" />
+                        </feature>
+                </config-file>
+                        <source-file src="src/ios/GrantPermission.m" />
+        </platform>
+</plugin>
